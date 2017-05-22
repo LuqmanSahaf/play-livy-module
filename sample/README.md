@@ -19,20 +19,20 @@ activator clean publish-local
 We need to publish `play-livy` locally so this project can use it by specifying the following dependency:
 
 ```
-libraryDependencies += "luqman.sahaf" %% "play-livy" % "1.0-SNAPSHOT"
+libraryDependencies += "com.github.luqmansahaf" %% "play-livy" % "1.0-SNAPSHOT"
 ```
 Also, we may want to upload these jars to Livy Server by specifying these in app configuration.
 
 Search for the following lines in the logs of compilation for `play-livy`:
 
 ```
-[info] 	published play-livy_2.11 to /Users/username/.ivy2/local/luqman.sahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar
+[info] 	published play-livy_2.11 to /Users/username/.ivy2/local/com.github.luqmansahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar
 ```
 
 And for `sample`:
 
 ```
-[info] 	published sample_2.11 to /Users/username/.ivy2/local/luqman.sahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar
+[info] 	published sample_2.11 to /Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar
 ```
 
 We will use these paths in configuration setup.
@@ -50,8 +50,8 @@ Following configuration in [application.conf](./conf/application.conf) must be s
 In order to be able to run Pi Example in [Application.scala](./app/controllers/Application.scala), we will have to upload the following jars to Livy Session:
 
 - `com.cloudera.livy#livy-scala-api_2.11;0.3.0`
-- `luqman.sahaf#play-livy_2.11;1.0-SNAPSHOT`
-- `luqman.sahaf#sample_2.11;1.0-SNAPSHOT`
+- `com.github.luqmansahaf#play-livy_2.11;1.0-SNAPSHOT`
+- `com.github.luqmansahaf#sample_2.11;1.0-SNAPSHOT`
 
 The last two jars are published locally in Compile step above, and you can locate them under the path discussed [above](#compile).
 
@@ -81,8 +81,8 @@ livy{
         # whether to upload jar and other files on start
         toUpload = true
         list = [
-            "/Users/username/.ivy2/local/luqman.sahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar",
-            "/Users/username/.ivy2/local/luqman.sahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar"
+            "/Users/username/.ivy2/local/com.github.luqmansahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar",
+            "/Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar"
         ]
         # wait for files to upload to Livy Session for seconds:
         wait = 120

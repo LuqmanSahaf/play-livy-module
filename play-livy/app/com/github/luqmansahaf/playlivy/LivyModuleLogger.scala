@@ -8,5 +8,5 @@ import play.Logger
   * Defines Logger for this module
   */
 private object LivyModuleLogger {
-  val logger = Logger.of("luqman.sahaf.playlivy")
+  val logger = Logger.of("com.github.luqmansahaf.playlivy")
 }

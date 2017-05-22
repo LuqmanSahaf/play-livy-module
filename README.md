@@ -1,7 +1,7 @@
 # Play Livy Module - Scala
 [Apache Livy](https://livy.io) is a REST service for Apache Spark. With Livy you can create remote Spark interactive sessions using Livy's REST API. Livy also has a [Scala Client](https://github.com/cloudera/livy/tree/master/scala-api/src/main/scala/com/cloudera/livy/scalaapi) that can be used to submit Scala code to run on Livy session.
 
-Play Livy Module can be used in your Play app to submit code to Livy Scala Client. Apart from submitting jobs, you can also do the following using `LivyManager`
+Play Livy Module can be used in your Play app to submit code to Livy Scala Client. Apart from submitting jobs, you can also do the following using [`LivyManager`](./play-livy/app/com/github/luqmansahaf/playlivy/LivyManager.scala)
 
 - Upload Jar files of related code and other files to Livy Session, so that the code can run smoothly on remote session without errors (Class Not Found mainly).
 - Schedule a refresh job which pings the Livy Session to keep it alive.
@@ -43,8 +43,8 @@ livy{
         # whether to upload jar and other files on start
         toUpload = true
         list = [
-            "/Users/username/.ivy2/local/luqman.sahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar",
-            "/Users/username/.ivy2/local/luqman.sahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar"
+            "/Users/username/.ivy2/local/com.github.luqmansahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar",
+            "/Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar"
         ]
         # wait for files to upload to Livy Session for seconds:
         wait = 120
@@ -79,6 +79,6 @@ To run example follow the guide in [sample](./sample) project.
 
 ## Logger
 
-The logger for Play Livy Module is: `luqman.sahaf.playlivy`, and can be set in [logback.xml](./sample/conf/logback.xml).
+The logger for Play Livy Module is: `com.github.luqmansahaf.playlivy`, and can be set in [logback.xml](./sample/conf/logback.xml).
 
 
