@@ -1,4 +1,4 @@
-package luqman.sahaf.playlivy
+package com.github.luqmansahaf.playlivy
 
 import akka.actor.ActorSystem
 import com.cloudera.livy.LivyClientBuilder

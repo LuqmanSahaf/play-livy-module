@@ -1,6 +1,6 @@
 name := "play-livy"
 
-organization := "luqman.sahaf"
+organization := "com.github.luqmansahaf"
 
 version := "1.0-SNAPSHOT"
 

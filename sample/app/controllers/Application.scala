@@ -1,8 +1,8 @@
 package controllers
 
 import akka.actor.ActorSystem
+import com.github.luqmansahaf.playlivy.LivyManager
 import javax.inject.Inject
-import luqman.sahaf.playlivy.LivyManager
 import org.apache.spark.sql.SparkSession
 import play.api.mvc._
 import play.api.Configuration

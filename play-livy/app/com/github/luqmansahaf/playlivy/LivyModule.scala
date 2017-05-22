@@ -1,4 +1,4 @@
-package luqman.sahaf.playlivy
+package com.github.luqmansahaf.playlivy
 
 import play.api.Configuration
 import play.api.Environment
