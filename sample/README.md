@@ -3,33 +3,16 @@
 This is a sample project to explain how to use [Play-Livy-Module](../play-livy).
 
 ## <a name="compile"></a>Compile
-First compile and publish [play-livy](../play-livy) locally:
 
+First compile and publish sample locally:
 ```
-cd ../play-livy
-activator clean publish-local
-# alternatively
-# sbt clean publish-local
-```
-And sample:
-```
-cd ../sample
+cd sample
 activator clean publish-local
 ```
-We need to publish `play-livy` locally so this project can use it by specifying the following dependency:
 
-```
-libraryDependencies += "com.github.luqmansahaf" %% "play-livy" % "1.0-SNAPSHOT"
-```
-Also, we may want to upload these jars to Livy Server by specifying these in app configuration.
+Also, you may want to upload the sample jar to Livy Server by specifying these in app configuration.
 
-Search for the following lines in the logs of compilation for `play-livy`:
-
-```
-[info] 	published play-livy_2.11 to /Users/username/.ivy2/local/com.github.luqmansahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar
-```
-
-And for `sample`:
+Search for the following lines in the logs of compilation for `sample`:
 
 ```
 [info] 	published sample_2.11 to /Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar
@@ -50,10 +33,12 @@ Following configuration in [application.conf](./conf/application.conf) must be s
 In order to be able to run Pi Example in [Application.scala](./app/controllers/Application.scala), we will have to upload the following jars to Livy Session:
 
 - `com.cloudera.livy#livy-scala-api_2.11;0.3.0`
-- `com.github.luqmansahaf#play-livy_2.11;1.0-SNAPSHOT`
-- `com.github.luqmansahaf#sample_2.11;1.0-SNAPSHOT`
+- `com.github.luqmansahaf#play-livy_2.11;1.0`
+- `com.github.luqmansahaf#sample_2.11;1.0`
 
-The last two jars are published locally in Compile step above, and you can locate them under the path discussed [above](#compile).
+The `play-livy` jar can be found on [maven repository](https://search.maven.org/#artifactdetails%7Ccom.github.luqmansahaf%7Cplay-livy_2.11%7C1.0%7Cjar)
+
+The last `sample` jar is published locally in Compile step above, and you can locate them under the path discussed [above](#compile).
 
 All these jars are required because, the remote session will look for the code in its classpath.
 
@@ -81,8 +66,8 @@ livy{
         # whether to upload jar and other files on start
         toUpload = true
         list = [
-            "/Users/username/.ivy2/local/com.github.luqmansahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar",
-            "/Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar"
+            "/Users/username/.ivy2/cache/com.github.luqmansahaf/play-livy_2.11/jars/play-livy_2.11-1.0.jar",
+            "/Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0/jars/sample_2.11.jar"
         ]
         # wait for files to upload to Livy Session for seconds:
         wait = 120

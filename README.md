@@ -8,6 +8,24 @@ Play Livy Module can be used in your Play app to submit code to Livy Scala Clien
 - Change specific Spark configurations related to the Livy session created.
 - Stop the remote contexts related to Spark and Livy session when the app stops automatically.
 
+## Usage
+
+SBT:
+
+```
+libraryDependencies += "com.github.luqmansahaf" % "play-livy_2.11" % "1.0"
+```
+
+Maven:
+
+```
+<dependency>
+    <groupId>com.github.luqmansahaf</groupId>
+    <artifactId>play-livy_2.11</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 ## Configurations
 
 You can find all configurable options in [application.conf](./sample/conf/application.conf) in sample project. We discuss these below.
@@ -43,7 +61,7 @@ livy{
         # whether to upload jar and other files on start
         toUpload = true
         list = [
-            "/Users/username/.ivy2/local/com.github.luqmansahaf/play-livy_2.11/1.0-SNAPSHOT/jars/play-livy_2.11.jar",
+            "/Users/username/.ivy2/cache/com.github.luqmansahaf/play-livy_2.11/jars/play-livy_2.11-1.0.jar",
             "/Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar"
         ]
         # wait for files to upload to Livy Session for seconds:
