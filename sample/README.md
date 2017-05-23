@@ -15,7 +15,7 @@ Also, you may want to upload the sample jar to Livy Server by specifying these i
 Search for the following lines in the logs of compilation for `sample`:
 
 ```
-[info] 	published sample_2.11 to /Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0-SNAPSHOT/jars/sample_2.11.jar
+[info] 	published sample_2.11 to /Users/username/.ivy2/local/com.github.luqmansahaf/sample_2.11/1.0/jars/sample_2.11.jar
 ```
 
 We will use these paths in configuration setup.
